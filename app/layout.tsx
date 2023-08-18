@@ -8,6 +8,18 @@ import { AuthProvider } from "@/store/AuthProvider";
 export const metadata: Metadata = {
   title: 'Blogger | Blog Application',
   description: 'Blog Application developed to view the latest blogs and you can also to write blogs',
+  icons: {
+    icon: [
+      '/favicon.ico?v=5'
+    ],
+    apple: [
+      '/apple-touch-icon.png?v=5' 
+    ],
+    shortcut:[
+      '/apple-touch-icon.png'
+    ]
+  },
+  manifest: '/site.webmanifest'
 }
 
 export default function RootLayout({

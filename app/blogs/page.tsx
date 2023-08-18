@@ -1,9 +1,9 @@
-import axios from "axios"
 import Image from "next/image"
 import Link from "next/link"
 
 const getData = async () => {
-  const {data} = await axios.get('http://localhost:3000/api/post');
+  const res = await fetch('http://localhost:3000/api/post');
+  const data = await res.json();
   return data;
 } 
 
@@ -11,7 +11,6 @@ const Blogs = async () => {
 
   const data = await getData();
 
-  const text = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus tempore quis ratione voluptate, beatae tenetur dolore dignissimos nam mollitia alias animi, provident nisi fuga! Consequatur sapiente consectetur suscipit eveniet aliquam?"
   return (
     <>
     <section className='portfolio-section px-3 min-h-[80vh] flex flex-col justify-center'>

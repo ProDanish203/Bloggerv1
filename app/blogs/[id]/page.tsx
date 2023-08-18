@@ -1,13 +1,13 @@
-import axios from "axios";
 import Image from "next/image"
 
 const baseUrl = "http://localhost:3000"
 
 const getData = async (id:any) => {
-  const {data} = await axios.get(`${baseUrl}/api/post/${id}`);
+  const res = await fetch(`${baseUrl}/api/post/${id}`);
+  const data = await res.json();
   return data;
 }
-
+      
 export async function generateMetadata({params}:any){
   const data = await getData(params.id);
   return {
